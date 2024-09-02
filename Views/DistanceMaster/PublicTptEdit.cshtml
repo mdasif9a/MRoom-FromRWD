@@ -1,0 +1,124 @@
+
+@model PublicTpt
+@{
+    ViewBag.Title = "PublicTpt Edit";
+    ViewBag.PageTitle = "PublicTpt Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <form action="/DistanceMaster/PublicTptEdit" method="post" class="row g-0">
+                    <input type="hidden" asp-for="Id" />
+
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label asp-for="CountryId" class="from-label mb-2">Select Country</label>
+                            <select asp-for="CountryId" asp-items="ViewBag.LCountryName" class="form-select">
+                                <option value="">Select Country</option>
+                            </select>
+                            <span asp-validation-for="CountryId" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="StateId" class="from-label mb-2">Select State</label>
+                            <select asp-for="StateId" asp-items="ViewBag.LStateName" class="form-select">
+                                <option value="">Select State</option>
+                            </select>
+                            <span asp-validation-for="StateId" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="CityId" class="from-label mb-2">Select City</label>
+                            <select asp-for="CityId" asp-items="ViewBag.LCityName" class="form-select">
+                                <option value="">Select City</option>
+                            </select>
+                            <span asp-validation-for="CityId" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Name" class="from-label mb-2">Name</label>
+                            <input type="text" class="form-control" asp-for="Name" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Status" class="from-label mb-2">Select Status</label>
+                            <select asp-for="Status" class="form-select">
+                                <option value="Active">Active</option>
+                                <option value="InActive">InActive</option>
+                            </select>
+                            <span asp-validation-for="Status" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-outline-primary">Submit</button>
+                        <button type="reset" class="btn btn-danger ms-3">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $("#CountryId").on("change", function () {
+                GetStates($(this).val(), $("#StateId"));
+            });
+
+            $("#StateId").on("change", function () {
+                GetCities($("#CountryId").val(), $(this).val(), $("#CityId"));
+            });
+        });
+
+        function GetStates(countryid, stateEle) {
+            let country = countryid;
+            $.ajax({
+                url: "/LocationMaster/GetStates",
+                dataType: 'json',
+                data: { countryId: country },
+                success: function (res) {
+                    let $stateName = stateEle;
+                    $stateName.empty();
+                    $stateName.append($("<option>").val("").text("Select State"));
+                    if (res.length > 0) {
+                        $.each(res, function (index, item) {
+                            $stateName.append($("<option>").val(item.id).text(item.name));
+                        });
+                    } else {
+                        $stateName.append($("<option>").val("").text("No states available"));
+                    }
+                },
+                error: function () {
+                    alert("An error occurred while retrieving stateNames.");
+                }
+            });
+        }
+
+        function GetCities(countryId, stateId, cityEle) {
+            let conName = countryId;
+            let stateName = stateId;
+            $.ajax({
+                url: "/LocationMaster/GetCities",
+                dataType: 'json',
+                data: { countryId: conName, stateId: stateName },
+                success: function (res) {
+                    let $city = cityEle;
+                    $city.empty(); // Clear existing options
+                    $city.append($("<option>").val("").text("Select City"));
+
+                    if (res.length > 0) {
+                        $.each(res, function (index, item) {
+                            $city.append($("<option>").val(item.id).text(item.name));
+                        });
+                    } else {
+                        $city.append($("<option>").val("").text("No cities available"));
+                    }
+                },
+                error: function () {
+                    alert("An error occurred while retrieving cities.");
+                }
+            });
+        }
+    </script>
+}

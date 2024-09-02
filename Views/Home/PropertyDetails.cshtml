@@ -1,0 +1,126 @@
+﻿@model PropertyDetail
+
+@section Styles {
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .mh3 {
+            font-size: 32px;
+            font-weight: 700;
+            border-bottom: 1px solid #000;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .about-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            color: #6c757d;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+            .contact-info h2 {
+                font-size: 2rem;
+                margin-top: 1rem;
+                color: #0d6efd;
+            }
+
+            .contact-info p, .contact-info a {
+                margin-bottom: 1.2rem;
+                color: #6c757d;
+                font-size: 1.1rem;
+                text-decoration: none;
+            }
+
+                .contact-info a:hover {
+                    color: #0d6efd;
+                }
+
+            .contact-info i {
+                margin-right: 10px;
+            }
+
+            .contact-info p:last-child {
+                margin-bottom: 0;
+            }
+    </style>
+
+}
+<div class="container my-5">
+    <h1 class="text-primary text-center mh3">Property Details</h1>
+
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <img src="@Model.Image1" alt="Alternate Text" class="img-fluid" />
+        </div>
+
+        <div class="col-md-3">
+            <h5><b>@* MROOMBMKI10845401 *@ @Model.PropertyId</b> </h5>
+            <h5><b>Parking: </b> @Model.ParkingTypeName</h5>
+            <h5><b>Parking: </b> @Model.ParkingVisitorName</h5>
+        </div>
+
+        <div class="col-md-3">
+            <h5><b>@Model.BHKTypeName @Model.FloorTypeName</b></h5>
+            <h5><b>Near By: </b> M.S College</h5>
+            <h5><b>Rent M/o: </b> @Model.MonthlyRent</h5>
+        </div>
+
+        <div class="col-md-3">
+            <h5><b>Toilet: </b>@Model.ToiletTypeName</h5>
+            <h5><b>Muhalla: </b> @Model.ColonyName</h5>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <img src="@Model.Image2" alt="Alternate Text" class="img-fluid" />
+        </div>
+
+        
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <img src="@Model.Image3" alt="Alternate Text" class="img-fluid" />
+        </div>
+
+       
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <img src="@Model.Image4" alt="Alternate Text" class="img-fluid" />
+        </div>
+
+       
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <img src="@Model.Image5" alt="Alternate Text" class="img-fluid" />
+        </div>
+
+       
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <img src="@Model.Image6" alt="Alternate Text" class="img-fluid" />
+        </div>
+
+
+    </div>
+</div>

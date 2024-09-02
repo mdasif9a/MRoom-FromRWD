@@ -1,0 +1,474 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>MRoom Admin Panel</title>
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="/assets/img/logo.jpeg" rel="icon">
+    <link href="/assets/img/logo.jpeg" rel="apple-touch-icon">
+    <link href="/AdminLayouts/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="/AdminLayouts/css/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/AdminLayouts/css/style.css" rel="stylesheet">
+    <link href="/Content/adminsite.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.3.4/css/buttons.dataTables.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    @RenderSection("Head", false)
+    <style>
+        .form-control, .form-select {
+            border-radius: 0;
+            border: 2px solid rgb(200, 200, 200);
+        }
+
+            .form-control:focus, .form-select:focus {
+                border: 2px solid #0d6efd;
+            }
+
+            .form-control:focus, .form-select:focus {
+                box-shadow: none;
+            }
+
+        .pagination {
+            --bs-pagination-border-radius: 0;
+            --bs-pagination-focus-box-shadow: none;
+        }
+
+        :root {
+            --bs-border-color: #000000;
+        }
+
+        .table > :not(caption) > * > * {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header" class="header fixed-top d-flex align-items-center">
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="/Admin" class="logo d-flex align-items-center">
+                <span class="d-none d-lg-block">MRoom</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div>
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+                <li class="nav-item dropdown pe-3">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="javascript:void(0);" data-bs-toggle="dropdown">
+                        <i class="bi bi-person-circle"></i>
+                        <span class="d-none d-md-block dropdown-toggle ps-2">UserName</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="/Home/Logout">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Log Out</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <aside id="sidebar" class="sidebar">
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/Admin">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#locationmaster" data-bs-toggle="collapse" href="#" aria-expanded="false">
+                    <i class="bi bi-map"></i><span>Location Master</span><i class="bi bi-chevron-left ms-auto"></i>
+                </a>
+                <ul id="locationmaster" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/LocationMaster/CountryMasterList">
+                            <i class="bi bi-circle"></i>
+                            <span>Country</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/LocationMaster/StateMasterList">
+                            <i class="bi bi-circle"></i>
+                            <span>State</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/LocationMaster/CityMasterList">
+                            <i class="bi bi-circle"></i>
+                            <span>City</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/LocationMaster/ColonyMuhallaList">
+                            <i class="bi bi-circle"></i>
+                            <span>Colony / Muhalla</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/LocationMaster/NearByList">
+                            <i class="bi bi-circle"></i>
+                            <span>Near By</span>
+                        </a>
+                    </li>
+
+
+
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#distancemaster" data-bs-toggle="collapse" href="#" aria-expanded="false">
+                    <i class="bi bi-signpost"></i><span>Distance Master</span><i class="bi bi-chevron-left ms-auto"></i>
+                </a>
+                <ul id="distancemaster" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/DistanceMaster/RailwayList">
+                            <i class="bi bi-circle"></i>
+                            <span>Railway Station</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/DistanceMaster/BusList">
+                            <i class="bi bi-circle"></i>
+                            <span>Bus Station</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/DistanceMaster/SchoolGovList">
+                            <i class="bi bi-circle"></i>
+                            <span>School (Gov)</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/DistanceMaster/SchoolPvtList">
+                            <i class="bi bi-circle"></i>
+                            <span>School (Pvt)</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/DistanceMaster/BankGovList">
+                            <i class="bi bi-circle"></i>
+                            <span>Bank (Gov)</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/DistanceMaster/BankPvtList">
+                            <i class="bi bi-circle"></i>
+                            <span>Bank (Pvt)</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/DistanceMaster/HospitalGovList">
+                            <i class="bi bi-circle"></i>
+                            <span>Hospital (Gov)</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/DistanceMaster/HospitalPvtList">
+                            <i class="bi bi-circle"></i>
+                            <span>Hospital (Pvt)</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/DistanceMaster/MarketList">
+                            <i class="bi bi-circle"></i>
+                            <span>Market</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/DistanceMaster/DmOfficeList">
+                            <i class="bi bi-circle"></i>
+                            <span>DM Office</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/DistanceMaster/PublicTptList">
+                            <i class="bi bi-circle"></i>
+                            <span>Public Tpt</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#ptopertymaster" data-bs-toggle="collapse" href="#" aria-expanded="false">
+                    <i class="bi bi-building"></i><span>Property Master</span><i class="bi bi-chevron-left ms-auto"></i>
+                </a>
+                <ul id="ptopertymaster" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMaster/PropertyTypeList">
+                            <i class="bi bi-circle"></i>
+                            <span>Property Type</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMaster/PropertyVariantList">
+                            <i class="bi bi-circle"></i>
+                            <span>Property Variants</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMaster/BHKTypeList">
+                            <i class="bi bi-circle"></i>
+                            <span>BHK Types</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMaster/FloorTypeList">
+                            <i class="bi bi-circle"></i>
+                            <span>Floor Types</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMaster/ToiletTypeList">
+                            <i class="bi bi-circle"></i>
+                            <span>Toilet Types</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMaster/ParkingTypeList">
+                            <i class="bi bi-circle"></i>
+                            <span>Parking Types</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMaster/ElevatorTypeList">
+                            <i class="bi bi-circle"></i>
+                            <span>Elevator</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMaster/ParkingVisitorList">
+                            <i class="bi bi-circle"></i>
+                            <span>Parking Visitor</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMaster/FurnishedItemList">
+                            <i class="bi bi-circle"></i>
+                            <span>Furnished Type</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMaster/StairList">
+                            <i class="bi bi-circle"></i>
+                            <span>Stairs</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMaster/RoofList">
+                            <i class="bi bi-circle"></i>
+                            <span>Roofs</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMaster/FirstPriorityList">
+                            <i class="bi bi-circle"></i>
+                            <span>First Priorities</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMaster/ReligionList">
+                            <i class="bi bi-circle"></i>
+                            <span>Religions</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMaster/CookingItemList">
+                            <i class="bi bi-circle"></i>
+                            <span>Cooking Items</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMaster/WaterSupplyList">
+                            <i class="bi bi-circle"></i>
+                            <span>Water Supplies</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMaster/LpgList">
+                            <i class="bi bi-circle"></i>
+                            <span>LPG</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMaster/ElectricityList">
+                            <i class="bi bi-circle"></i>
+                            <span>Electricities</span>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#propertyadd" data-bs-toggle="collapse" href="#" aria-expanded="false">
+                    <i class="bi bi-building-add"></i><span>Properties</span><i class="bi bi-chevron-left ms-auto"></i>
+                </a>
+                <ul id="propertyadd" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMain/ProAllList">
+                            <i class="bi bi-circle"></i>
+                            <span>All</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMain/ProSaleList">
+                            <i class="bi bi-circle"></i>
+                            <span>Sell</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ProMain/ProRentList">
+                            <i class="bi bi-circle"></i>
+                            <span>Rent</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#frontpage" data-bs-toggle="collapse" href="#" aria-expanded="false">
+                    <i class="bi bi-file-earmark-bar-graph"></i><span>Front Page</span><i class="bi bi-chevron-left ms-auto"></i>
+                </a>
+                <ul id="frontpage" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Admin/AcSliders">
+                            <i class="bi bi-circle"></i>
+                            <span>Home Slider</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Admin/AcTestimonials">
+                            <i class="bi bi-circle"></i>
+                            <span>Testimonials</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="/MyUser/Index">
+                    <i class="bi bi-person"></i>
+                    <span>All Users</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/Admin/Settings">
+                    <i class="bi bi-lock"></i>
+                    <span>Change Password</span>
+                </a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="/Home/Logout">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+    <main id="main" class="main">
+        <div class="pagetitle">
+            <h1>@ViewBag.PageTitle</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/Admin">Home</a></li>
+                    <li class="breadcrumb-item active">@ViewBag.PageTitle</li>
+                </ol>
+            </nav>
+        </div>
+        <section class="section">
+            @RenderBody()
+        </section>
+    </main>
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; Copyright <strong><span>MROOM</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            Developed by <a href="javascript:void(0);" target="_blank">Md Asif</a>
+        </div>
+    </footer>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+    <script src="/AdminLayouts/js/bootstrap.bundle.min.js"></script>
+    <script src="/AdminLayouts/js/main.js"></script>
+    <script src="/AdminLayouts/js/jquery-3.6.3.min.js"></script>
+    <script src="/AdminLayouts/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/AdminLayouts/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.4/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.4/js/buttons.print.min.js"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf-html2canvas@latest/dist/jspdf-html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#sidebar ul li a').each(function () {
+                var path = location.href;
+                if (this.href == location.href) {
+                    $(this).addClass('active');
+                    $(this).parent().parent('.collapse').addClass('show');
+                    $(this).parent().parent('.collapse').parent().children('.nav-link').addClass('active');
+                    $(this).parent().parent('.collapse').parent().children('.nav-link').removeClass('collapsed');
+                }
+            });
+        });
+    </script>
+    @if (TempData["datachange"] != null)
+    {
+        <script type="text/javascript">
+            $(function () {
+                alert('@TempData["datachange"]');
+            });
+        </script>
+    }
+    @RenderSection("Scripts", false)
+</body>
+
+</html>

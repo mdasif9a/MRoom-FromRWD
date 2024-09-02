@@ -1,0 +1,139 @@
+﻿@model IEnumerable<PropertyDetail>
+@section Styles {
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .mh3 {
+            font-size: 32px;
+            font-weight: 700;
+            border-bottom: 1px solid #000;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .about-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            color: #6c757d;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+            .contact-info h2 {
+                font-size: 2rem;
+                margin-top: 1rem;
+                color: #0d6efd;
+            }
+
+            .contact-info p, .contact-info a {
+                margin-bottom: 1.2rem;
+                color: #6c757d;
+                font-size: 1.1rem;
+                text-decoration: none;
+            }
+
+                .contact-info a:hover {
+                    color: #0d6efd;
+                }
+
+            .contact-info i {
+                margin-right: 10px;
+            }
+
+            .contact-info p:last-child {
+                margin-bottom: 0;
+            }
+    </style>
+
+}
+<div class="container my-5">
+    <h1 class="text-primary text-center mh3">Property List</h1>
+    <form method="get" action="/Home/PropertyListFilter">
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <label for="NearBy" class="form-label">City :</label>
+                <select name="City" id="City" class="form-select">
+                    <option value="">Select City</option>
+                    @foreach (SelectListItem item in ViewBag.City)
+                    {
+                        <option value="@item.Value">@item.Text</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="Colony" class="form-label">Colony / Muhalla :</label>
+                <select name="Colony" id="Colony" class="form-select">
+                    <option value="">Select Colony / Muhalla</option>
+                    @foreach (SelectListItem item in ViewBag.Colony)
+                    {
+                        <option value="@item.Value">@item.Text</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="Budget" class="form-label">Budget :</label>
+                <select name="Budget" id="Budget" class="form-select">
+                    <option value="">Select Budget</option>
+                    <option value="10000">Under 10,000</option>
+                    <option value="20000">Under 20,000</option>
+                    <option value="50000">Under 50,000</option>
+                    <option value="100000">Under 1,00,000</option>
+                    <option value="@int.MaxValue">Above 1,00,000</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="Floor" class="form-label">Floor :</label>
+                <select name="Floor" id="Floor" class="form-select">
+                    <option value="">Select Floor</option>
+                    @foreach (SelectListItem item in ViewBag.Floor)
+                    {
+                        <option value="@item.Value">@item.Text</option>
+                    }
+                </select>
+            </div>
+            <div class="text-end mt-2">
+                <button type="submit" class="btn btn-outline-primary">Submit</button>
+                <button type="reset" class="btn btn-danger ms-3">Reset</button>
+            </div>
+        </div>
+    </form>
+
+    @foreach (PropertyDetail item in Model)
+    {
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <img src="@item.Image1" alt="Alternate Text" class="img-fluid" />
+            </div>
+
+            <div class="col-md-3">
+                <h5><b>@item.PropertyId</b> </h5>
+                <h5><b>Parking : </b> @item.ParkingTypeName</h5>
+                <h5><b>Parking For Visitor : @item.ParkingVisitorName</b> </h5>
+                <h5><a href="/Home/PropertyDetails?Pid=@item.Id">More Details</a></h5>
+            </div>
+
+            <div class="col-md-3">
+                <h5><b>@item.BHKTypeName @item.FloorTypeName</b></h5>
+                <h5><b>Near By: </b> M.S College</h5>
+                <h5><b>Rent M/o: </b> @item.MonthlyRent</h5>
+            </div>
+
+            <div class="col-md-3">
+                <h5><b>Toilet </b>: @item.ToiletTypeName</h5>
+                <h5><b>Muhalla: </b> @item.ColonyName</h5>
+                <h5>Add To Wishlist</h5>
+            </div>
+        </div>
+    }
+</div>

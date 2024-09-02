@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MRoom</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    @RenderSection("Styles", false)
+</head>
+<body>
+    <header class="position-sticky top-0" style="z-index:9999;">
+        <nav class="navbar navbar-expand-md navbar-light border-bottom box-shadow" style="background-color:#fef900;">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="/img/mylogo.png" alt="MRoom Logo" height="40" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" style="width:100%;" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0" style="justify-content:space-evenly;width:100%;align-items:center;">
+                        <li class="nav-item nav-item2 text-center">
+                            Mroom For Business <br />Trusted By 5000 Family
+                        </li>
+                        <li class="nav-item nav-item2 text-center text-primary">
+                            <i class="fa fa-globe"></i><br />
+                            <div id="google_translate_element"></div>
+                        </li>
+                        <li class="nav-item nav-item2 text-center">
+                            <i class="fa fa-location-dot"></i><br />
+                            Patna
+                        </li>
+                        <li class="nav-item nav-item2 text-center">
+                            <a class="nav-link text-primary" href="/Home/Login">
+                                <i class="fa fa-house"></i> List Your<br />
+                                Property Start Earning
+                            </a>
+                        </li>
+                        <li class="nav-item nav-item2 text-center">
+                            <a class="nav-link text-primary" href="tel:+91 98521 55006">
+                                <i class="fa fa-phone"></i> +91 98521 55006<br />
+                                Call Us to List<br />& Book Now
+                            </a>
+                        </li>
+                        <li class="nav-item nav-item2 text-center">
+                            <a class="nav-link p-0" href="javascript:alert('coming soon');">
+                                <img src="/img/shopping_bg.png" height="30" />
+                            </a>
+                                                     
+                        </li>
+                        <li class="nav-item nav-item2">
+                            <a href="/Home/Login" class="btn btn-sm btn-primary">Login/signup</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid p-0">
+        @RenderBody()
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: Contact Information -->
+                <div class="col-md-4">
+                    <h5>Company</h5>
+                    <a href="/Home/About">About Us</a><br>
+                    <a href="/Home/Contact">Contact Us</a><br>
+                    <a href="/Home/Privacy">Privacy Policy</a><br>
+                    <a href="/Home/TermsOfUse">Term of Use Policy</a><br />
+                    <a href="/Home/Testimonials">Testimonials</a>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <a href="/">Home</a><br>
+                    <a href="/Home/ListingWhatsapp">Listing Using Whatsapp</a><br>
+                    <a href="/Home/Tenats">Tenats</a><br>
+                    <a href="/Home/OwnerLandlords">Owner / Landlords</a>
+                </div>
+                <!-- Column 3: Social Media Links -->
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,hi,mr',
+                    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+                },
+                'google_translate_element'
+            );
+        }
+
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Initialize Owl Carousel -->
+    <script>
+        $(function () {
+            $('.mySlider').owlCarousel({
+                loop: true,
+                margin: 10,
+                autoplay: true,  // Enable autoplay
+                autoplayTimeout: 3000,  // Autoplay interval in milliseconds
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    },
+                    1200: {
+                        items: 4
+                    }
+                }
+            });
+
+            $('#testimonial').owlCarousel({
+                loop: true,
+                margin: 10,
+                autoplay: true,  // Enable autoplay
+                autoplayTimeout: 2000,  // Autoplay interval in milliseconds
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+        });
+    </script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

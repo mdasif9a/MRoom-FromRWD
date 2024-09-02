@@ -1,0 +1,43 @@
+@model FloorType
+@{
+    ViewBag.Title = "FloorType Edit";
+    ViewBag.PageTitle = "FloorType Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <form action="/ProMaster/FloorTypeEdit" method="post" class="row g-0">
+                    <input type="hidden" asp-for="Id" />
+
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label asp-for="FloorTypeName" class="form-label mb-2">FloorType Name</label>
+                            <input type="text" class="form-control" asp-for="FloorTypeName" />
+                            <span asp-validation-for="FloorTypeName" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Status" class="form-label mb-2">Select Status</label>
+                            <select asp-for="Status" class="form-select">
+                                <option value="Active">Active</option>
+                                <option value="InActive">InActive</option>
+                            </select>
+                            <span asp-validation-for="Status" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-outline-primary">Submit</button>
+                        <button type="reset" class="btn btn-danger ms-3">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+    </script>
+}

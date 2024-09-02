@@ -1,0 +1,52 @@
+﻿@model PropertyVariant
+@{
+    ViewBag.Title = "Property Variant Edit";
+    ViewBag.PageTitle = "Property Type Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <form action="/ProMaster/PropertyVariantEdit" method="post" class="row g-0">
+                    <input type="hidden" asp-for="Id" />
+
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label asp-for="PropertyTypeId" class="from-label mb-2">Property Type</label>
+                            <select asp-for="PropertyTypeId" asp-items="ViewBag.LPropertyType" class="form-select">
+                                <option value="">Select Property Type</option>
+                            </select>
+                            <span asp-validation-for="PropertyTypeId" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="PropertyVariantName" class="from-label mb-2">Property Variant Name</label>
+                            <input type="text" class="form-control" asp-for="PropertyVariantName" />
+                            <span asp-validation-for="PropertyVariantName" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Status" class="from-label mb-2">Select Status</label>
+                            <select asp-for="Status" class="form-select">
+                                <option value="Active">Active</option>
+                                <option value="InActive">InActive</option>
+                            </select>
+                            <span asp-validation-for="Status" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-outline-primary">Submit</button>
+                        <button type="reset" class="btn btn-danger ms-3">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+
+    </script>
+}
+

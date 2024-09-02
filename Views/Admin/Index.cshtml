@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Admin Dashboard";
+    ViewBag.PageTitle = "Admin Dashboard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    .fs-30 {
+        font-size: 30px;
+    }
+
+    .card {
+        padding-top: 1.25rem;
+    }
+
+        .card.card-tale {
+            background: #7DA0FA;
+            color: #ffffff;
+        }
+
+        .card.card-dark-blue {
+            background: #4747A1;
+            color: #ffffff;
+        }
+
+        .card.card-light-blue {
+            background: #7978E9;
+            color: #ffffff;
+        }
+
+        .card.card-light-danger {
+            background: #F3797E;
+            color: #ffffff;
+        }
+
+    p {
+        font-size: 1.25rem;
+        margin-bottom: .5rem;
+        line-height: 1.3rem;
+    }
+</style>
+<div class="row">
+    <div class="col-md-3 col-sm-6">
+        <div class="card card-tale">
+            <div class="card-body">
+                <p class="mb-4">Total Property</p>
+                <p class="fs-30 mb-2">0</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <div class="card card-dark-blue">
+            <div class="card-body">
+                <p class="mb-4">Sell Property</p>
+                <p class="fs-30 mb-2">0</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <div class="card card-light-blue">
+            <div class="card-body">
+                <p class="mb-4">Rent Property</p>
+                <p class="fs-30 mb-2">0</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <div class="card card-light-danger">
+            <div class="card-body">
+                <p class="mb-4">Total Users</p>
+                <p class="fs-30 mb-2">0</p>
+            </div>
+        </div>
+    </div>
+</div>

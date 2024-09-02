@@ -1,0 +1,44 @@
+
+            @model ParkingVisitor
+            @{
+                ViewBag.Title = "ParkingVisitor Create";
+                ViewBag.PageTitle = "ParkingVisitor Create";
+                Layout = "~/Views/Shared/_AdminLayout.cshtml";
+            }
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="/ProMaster/ParkingVisitorCreate" method="post" class="row g-0">
+
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label asp-for="Name" class="from-label mb-2">Name</label>
+                                        <input type="text" class="form-control" asp-for="Name" />
+                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="Status" class="from-label mb-2">Select Status</label>
+                                        <select asp-for="Status" class="form-select">
+                                            <option value="Active">Active</option>
+                                            <option value="InActive">InActive</option>
+                                        </select>
+                                        <span asp-validation-for="Status" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="text-end">
+                                    <button type="submit" class="btn btn-outline-primary">Submit</button>
+                                    <button type="reset" class="btn btn-danger ms-3">Reset</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @section Scripts {
+                <script>    
+                </script>
+            }
+        

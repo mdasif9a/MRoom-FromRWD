@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Change Password";
+    ViewBag.PageTitle = "Change Password";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-10">
+        <div class="card">
+            <div class="card-body">
+                <form action="/Admin/Settings" method="post" class="row g-3">
+                    <div class="col-12 mb-2">
+                        <label for="OldPassword" class="form-label">Old Password</label>
+                        <input type="text" class="form-control" id="OldPassword" name="OldPassword" required>
+                    </div>
+                    <div class="col-12 mb-2">
+                        <label for="NewPassword" class="form-label">New Password</label>
+                        <input type="password" class="form-control" id="NewPassword" name="NewPassword" required>
+                    </div>
+                    <div class="col-12 mb-2">
+                        <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" required>
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-outline-primary" onclick="return CheckVal()">Submit</button>
+                        <button type="reset" class="btn btn-danger ms-3">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script type="text/javascript">
+        function CheckVal() {
+            if ($("#NewPassword").val() === $("#ConfirmPassword").val()) {
+                return true;
+            } else {
+                alert('Password Not Match');
+                return false;
+            }
+        }
+    </script>
+}

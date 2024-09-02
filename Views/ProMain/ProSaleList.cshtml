@@ -1,0 +1,61 @@
+﻿@model IEnumerable<PropertyDetail>
+@{
+    ViewBag.Title = "Property Sale List";
+    ViewBag.PageTitle = "Property Sale List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int i = 1;
+}
+<div class="card">
+    <div class="card-header">
+        <a href="/ProMain/PropertyCreate?TypeFor=Sell" class="btn btn-success"><i class="bi bi-plus"></i> Add</a>
+    </div>
+    <div class="card-body table-responsive">
+        <table id="prpertytype" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr class="text-nowrap">
+                    <th>S. No</th>
+                    <th>Property Id</th>
+                    <th>Property Name</th>
+                    <th>Property For</th>
+                    <th>Property Variant</th>
+                    <th>Floor</th>
+                    <th>Parking Type</th>
+                    <th>Parking Visitor</th>
+                    <th>Muhalla</th>
+                    <th>View</th>
+                </tr>
+            </thead>
+            <tbody class="text-nowrap">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@(i++)</td>
+                        <td>@item.PropertyId</td>
+                        <td>@item.Name</td>
+                        <td>@item.PropertyFor</td>
+                        <td>@item.PropertyVariantName</td>
+                        <td>@item.FloorTypeName</td>
+                        <td>@item.ParkingTypeName</td>
+                        <td>@item.ParkingVisitorName</td>
+                        <td>@item.ColonyName</td>
+                        <td></td>
+                        @* <td>
+                    <a href="/ProMaster/PropertyEdit/@item.Id" class="text-purple me-2"><i class="bi bi-pencil"></i></a>
+                    <a href="/ProMaster/PropertyDelete/@item.Id" onclick="return confirm('Are you sure want to delete?')" class="text-danger"><i class="bi bi-trash"></i></a>
+                    </td>*@
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+
+        $('#prpertytype').DataTable({
+            "scrollX": true
+        });
+
+    </script>
+}

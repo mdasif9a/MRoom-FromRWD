@@ -1,0 +1,469 @@
+﻿@section Styles {
+    <style>
+        .carousel.slide .carousel-item img {
+            max-height: 500px;
+        }
+
+        .item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .item .card {
+            min-height: 440px;
+        }
+
+        .carousel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .carousel-header h2 {
+                margin: 0;
+            }
+
+        .view-all-btn {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .pitem {
+            width: auto;
+        }
+
+        .testimonial {
+            text-align: center;
+            padding: 20px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            min-height: 440px;
+        }
+
+
+            .testimonial img {
+                margin: auto;
+                border-radius: 5px;
+                margin-bottom: 15px;
+                max-width: 200px;
+            }
+
+        .stars {
+            color: gold;
+            margin-bottom: 10px;
+        }
+
+        .bg-custom {
+            background-color: #f4fffc;
+        }
+
+        .meiframe {
+            width: 100%;
+            min-height: 315px;
+        }
+    </style>
+
+}
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        @foreach (Slider item in ViewBag.Slider)
+        {
+            <div class="carousel-item active">
+                <img src="@item.FilePath" class="d-block w-100" alt="Slide 1">
+            </div>
+        }
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="p-5 bg-primary m-0">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Find Your Dream Home  Commercial Space..</h5>
+
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-rent-tab" data-bs-toggle="pill" data-bs-target="#pills-rent" type="button" role="tab" aria-controls="pills-rent" aria-selected="true">Rent</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Sale</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Job</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false">City Directory</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <hr />
+                            <div class="tab-pane fade show active" id="pills-rent" role="tabpanel" aria-labelledby="pills-rent-tab" tabindex="0">
+                                <form>
+                                    <input type="hidden" name="SearchTab" value="Rent" />
+                                    <div class="row justify-content-evenly align-items-center">
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">Type Of Houseing/ Looking For</label>
+                                                <select class="form-select">
+                                                    <option value="">Select Type of Houseung</option>
+                                                    <option value="1BHK">1BHK</option>
+                                                    <option value="2BHK">2BHK</option>
+                                                    <option value="3BHK">3BHK</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">City Name</label>
+                                                <select class="form-select">
+                                                    <option value="">Select City</option>
+                                                    <option value="Motihari">Motihari</option>
+                                                    <option value="Patna">Patna</option>
+                                                    <option value="Gaya">Gaya</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">Near By</label>
+                                                <select class="form-select">
+                                                    <option value="">Select Near By</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 align-self-end">
+                                            <div class="mb-3">
+                                                <button type="submit" class="btn btn-primary">Search</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                                <form>
+                                    <input type="hidden" name="SearchTab" value="Rent" />
+                                    <div class="row justify-content-evenly align-items-center">
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">Type Of Houseing/ Looking For</label>
+                                                <select class="form-select">
+                                                    <option value="">Select Type of Houseung</option>
+                                                    <option value="1BHK">1BHK</option>
+                                                    <option value="2BHK">2BHK</option>
+                                                    <option value="3BHK">3BHK</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">City Name</label>
+                                                <select class="form-select">
+                                                    <option value="">Select City</option>
+                                                    <option value="Motihari">Motihari</option>
+                                                    <option value="Patna">Patna</option>
+                                                    <option value="Gaya">Gaya</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">Near By</label>
+                                                <select class="form-select">
+                                                    <option value="">Select Near By</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 align-self-end">
+                                            <div class="mb-3">
+                                                <button type="submit" class="btn btn-primary">Search</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                                <form>
+                                    <input type="hidden" name="SearchTab" value="Rent" />
+                                    <div class="row justify-content-evenly align-items-center">
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">Type Of Houseing/ Looking For</label>
+                                                <select class="form-select">
+                                                    <option value="">Select Type of Houseung</option>
+                                                    <option value="1BHK">1BHK</option>
+                                                    <option value="2BHK">2BHK</option>
+                                                    <option value="3BHK">3BHK</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">City Name</label>
+                                                <select class="form-select">
+                                                    <option value="">Select City</option>
+                                                    <option value="Motihari">Motihari</option>
+                                                    <option value="Patna">Patna</option>
+                                                    <option value="Gaya">Gaya</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">Near By</label>
+                                                <select class="form-select">
+                                                    <option value="">Select Near By</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 align-self-end">
+                                            <div class="mb-3">
+                                                <button type="submit" class="btn btn-primary">Search</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">
+                                <form>
+                                    <input type="hidden" name="SearchTab" value="Rent" />
+                                    <div class="row justify-content-evenly align-items-center">
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">Type Of Houseing/ Looking For</label>
+                                                <select name="Type" class="form-select">
+                                                    <option value="">Select Type of Houseung</option>
+                                                    <option value="1BHK">1BHK</option>
+                                                    <option value="2BHK">2BHK</option>
+                                                    <option value="3BHK">3BHK</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">City Name</label>
+                                                <select name="City" class="form-select">
+                                                    <option value="">Select City</option>
+                                                    <option value="Motihari">Motihari</option>
+                                                    <option value="Patna">Patna</option>
+                                                    <option value="Gaya">Gaya</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">Near By</label>
+                                                <select class="form-select">
+                                                    <option value="">Select Near By</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 align-self-end">
+                                            <div class="mb-3">
+                                                <button type="submit" class="btn btn-primary">Search</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="carousel-header mb-3">
+        <h2>Commercial Space & Shop</h2>
+        <a href="/Home/PropertyList?Name=CommercialShop" class="view-all-btn">View All</a>
+    </div>
+    @if (ViewBag.CommercialShop.Count > 0)
+    {
+        <div class="owl-carousel owl-theme mySlider">
+            <!-- Property 1 -->
+            @foreach (PropertyDetail item in ViewBag.CommercialShop)
+            {
+                <div class="item">
+                    <div class="card">
+                        <img src="@item.Image1" class="card-img-top" alt="Room 1">
+                        <div class="card-body">
+                            <p class="card-text">#@item.PropertyId</p>
+                            <h5 class="card-title">@item.Name</h5>
+                            <p class="card-text">@item.RoadName , @item.Zone , @item.CityName , @item.StateName</p>
+                            <p class="card-text"><strong>Price:</strong> Rs. @item.MonthlyRent</p>
+                            <hr />
+                            <a href="/Home/PropertyDetails?Pid=@item.Id" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <hr />
+        <h3 class="text-center">No Data Found</h3>
+        <hr />
+    }
+
+</div>
+
+<div class="p-5 bg-custom m-0">
+    <div class="container">
+        <div class="carousel-header mb-3">
+            <h2>1 BHK HOME</h2>
+            <a href="/Home/PropertyList?Name=BHK1" class="view-all-btn">View All</a>
+        </div>
+        @if (ViewBag.BHK1.Count > 0)
+        {
+            <div class="owl-carousel owl-theme mySlider">
+
+                <!-- Property 1 -->
+                @foreach (PropertyDetail item in ViewBag.BHK1)
+                {
+                    <div class="item">
+                        <div class="card">
+                            <img src="@item.Image1" class="card-img-top" alt="Room 1">
+                            <div class="card-body">
+                                <p class="card-text">#@item.PropertyId</p>
+                                <h5 class="card-title">@item.Name</h5>
+                                <p class="card-text">@item.RoadName , @item.Zone , @item.CityName , @item.StateName</p>
+                                <p class="card-text"><strong>Price:</strong> Rs. @item.MonthlyRent</p>
+                                <hr />
+                                <a href="/Home/PropertyDetails?Pid=@item.Id" class="btn btn-sm btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        }
+        else
+        {
+            <hr />
+            <h3 class="text-center">No Data Found</h3>
+            <hr />
+        }
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="carousel-header mb-3">
+        <h2>2 BHK HOME</h2>
+        <a href="/Home/PropertyList?Name=BHK2" class="view-all-btn">View All</a>
+    </div>
+    @if (ViewBag.BHK2.Count > 0)
+    {
+        <div class="owl-carousel owl-theme mySlider">
+
+            <!-- Property 1 -->
+            @foreach (PropertyDetail item in ViewBag.BHK2)
+            {
+                <div class="item">
+                    <div class="card">
+                        <img src="@item.Image1" class="card-img-top" alt="Room 1">
+                        <div class="card-body">
+                            <p class="card-text">#@item.PropertyId</p>
+                            <h5 class="card-title">@item.Name</h5>
+                            <p class="card-text">@item.RoadName , @item.Zone , @item.CityName , @item.StateName</p>
+                            <p class="card-text"><strong>Price:</strong> Rs. @item.MonthlyRent</p>
+                            <hr />
+                            <a href="/Home/PropertyDetails?Pid=@item.Id" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <hr />
+        <h3 class="text-center">No Data Found</h3>
+        <hr />
+    }
+</div>
+
+
+<div class="p-5 bg-custom m-0">
+    <div class="container">
+        <div class="carousel-header mb-3">
+            <h2>3 BHK HOME</h2>
+            <a href="/Home/PropertyList?Name=BHK3" class="view-all-btn">View All</a>
+        </div>
+        @if (ViewBag.BHK3.Count > 0)
+        {
+            <div class="owl-carousel owl-theme mySlider">
+                <!-- Property 1 -->
+                @foreach (PropertyDetail item in ViewBag.BHK3)
+                {
+                    <div class="item">
+                        <div class="card">
+                            <img src="@item.Image1" class="card-img-top" alt="Room 1">
+                            <div class="card-body">
+                                <p class="card-text">#@item.PropertyId</p>
+                                <h5 class="card-title">@item.Name</h5>
+                                <p class="card-text">@item.RoadName , @item.Zone , @item.CityName , @item.StateName</p>
+                                <p class="card-text"><strong>Price:</strong> Rs. @item.MonthlyRent</p>
+                                <hr />
+                                <a href="/Home/PropertyDetails?Pid=@item.Id" class="btn btn-sm btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <hr />
+            <h3 class="text-center">No Data Found</h3>
+            <hr />
+        }
+    </div>
+</div>
+
+
+<div class="p-5 bg-light m-0">
+    <div class="container">
+        <div class="text-center mb-3">
+            <h2>Our Customers Loves Us</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <iframe class="my-2 meiframe" src="https://www.youtube.com/embed/yPHxJQF6k8M?si=Yj7JuzhFscY1OXGT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="owl-carousel owl-theme" id="testimonial">
+            @foreach (Testimonial item in ViewBag.Testimonial)
+            {
+                <div class="item testimonial">
+                    <img src="@item.ImgPath" alt="Person 1">
+                    <h5>@item.Name</h5>
+                    <div class="stars">★★★★★</div>
+                    <p>@item.Title</p>
+                    <p>@item.Description</p>
+                </div>
+            }
+        </div>
+        <div class="text-center mb-3">
+            <h5><a href="/Home/Testimonials">More Testimonials..</a></h5>
+        </div>
+    </div>
+</div>

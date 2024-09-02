@@ -1,0 +1,885 @@
+﻿@model PropertyDetail
+@{
+    ViewBag.Title = "Property Details";
+    ViewBag.PageTitle = "Property Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section Head {
+    <style>
+        input[type="file"] {
+            display: block;
+        }
+
+        .imageThumb {
+            max-height: 75px;
+            border: 2px solid;
+            padding: 1px;
+            cursor: pointer;
+        }
+
+        .pip {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+        }
+
+        .remove {
+            display: block;
+            background: #444;
+            border: 1px solid black;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+        }
+
+            .remove:hover {
+                background: white;
+                color: black;
+            }
+    </style>
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <form action="/ProMain/PropertyCreate" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label class="form-label mb-2 d-block">For</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="rent" asp-for="PropertyFor" value="Rent">
+                                <label class="form-check-label" for="rent">Rent</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="sell" asp-for="PropertyFor" value="Sell">
+                                <label class="form-check-label" for="sell">Sell</label>
+                            </div>
+                            <span asp-validation-for="PropertyFor" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3 col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="UserId" class="from-label mb-2">Select User</label>
+                                <select asp-for="UserId" asp-items="ViewBag.LMyUsers" class="form-select">
+                                    <option value="">Select User</option>
+                                </select>
+                                <span asp-validation-for="UserId" class="text-danger"></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <h5 class="my-2 fw-bold text-center">-- Type --</h5>
+                        <hr />
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="PropertyTypeId" class="from-label mb-2">Property Type</label>
+                                <select asp-for="PropertyTypeId" asp-items="ViewBag.LPropertyType" class="form-select" onchange="GetPropertySub()">
+                                    <option value="">Select Property Type</option>
+                                </select>
+                                <span asp-validation-for="PropertyTypeId" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="Size" class="from-label mb-2">Size (in SqFt.)</label>
+                                <input type="text" asp-for="Size" class="form-control" />
+                                <span asp-validation-for="Size" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <h5 class="my-2 fw-bold text-center">-- Details --</h5>
+                        <hr />
+                        <div class="col-md-6">
+
+                            <div class="mb-3">
+                                <label asp-for="PropertyVariantName" class="from-label mb-2">Property Variant</label>
+                                <select asp-for="PropertyVariantName" class="form-select">
+                                    <option value="">Select Property Variant</option>
+                                    <option value="">Select Property Type First</option>
+                                </select>
+                                <span asp-validation-for="PropertyVariantName" class="text-danger"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="mb-3">
+                                <label asp-for="BHKTypeName" class="from-label mb-2">Select BHK</label>
+                                <select asp-for="BHKTypeName" asp-items="ViewBag.LBHK" class="form-select">
+                                    <option value="">Select BHK</option>
+                                </select>
+                                <span asp-validation-for="BHKTypeName" class="text-danger"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="ToiletTypeName" class="form-label">Toilet Type :</label>
+                                <select asp-for="ToiletTypeName" asp-items="ViewBag.LToiletType" class="form-select">
+                                    <option value="">Select Toilet</option>
+                                </select>
+                                <span asp-validation-for="ToiletTypeName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="ParkingTypeName" class="form-label">Parking Type :</label>
+                                <select asp-for="ParkingTypeName" asp-items="ViewBag.LParkingType" class="form-select">
+                                    <option value="">Select Parking</option>
+                                </select>
+                                <span asp-validation-for="ParkingTypeName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="ParkingVisitorName" class="form-label">Parking for Visitor :</label>
+                                <select asp-for="ParkingVisitorName" asp-items="ViewBag.LParkingVisitors" class="form-select">
+                                    <option value="">Select Visitor Parking</option>
+                                </select>
+                                <span asp-validation-for="ParkingVisitorName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="FloorTypeName" class="form-label">No Of Floors :</label>
+                                <select asp-for="FloorTypeName" asp-items="ViewBag.LFloor" class="form-select">
+                                    <option value="">Select Visitor Parking</option>
+                                </select>
+                                <span asp-validation-for="FloorTypeName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="FirstPrioName" class="form-label">First Priority :</label>
+                                <select asp-for="FirstPrioName" asp-items="ViewBag.LFirstPriority" class="form-select">
+                                    <option value="">Select First Priority</option>
+                                </select>
+                                <span asp-validation-for="FirstPrioName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="NoOfMembers" class="form-label">Number of Members:</label>
+                                <input type="text" asp-for="NoOfMembers" class="form-control" />
+                                <span asp-validation-for="NoOfMembers" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="CC_TV" class="form-label">CC_TV Camera :</label>
+                                <select asp-for="CC_TV" class="form-select">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No" selected="">No</option>
+                                </select>
+                                <span asp-validation-for="CC_TV" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <h5 class="my-2 fw-bold text-center">-- Property Location --</h5>
+                        <hr />
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="Name" class="form-label">Apartments / House Name:</label>
+                                <input type="text" asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="CountryName" class="form-label">Country :</label>
+                                <select asp-for="CountryName" asp-items="ViewBag.LCountry" class="form-select" onchange="GetStates()">
+                                    <option value="">Select Country</option>
+                                </select>
+                                <span asp-validation-for="CountryName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="StateName" class="form-label">State :</label>
+                                <select asp-for="StateName" class="form-select" onchange="GetCities()">
+                                    <option value="">Select State</option>
+                                    <option value="">Select Country First</option>
+                                </select>
+                                <span asp-validation-for="StateName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="CityName" class="form-label">City :</label>
+                                <select asp-for="CityName" class="form-select">
+                                    <option value="">Select City</option>
+                                    <option value="">Select State First</option>
+                                </select>
+                                <span asp-validation-for="CityName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="ColonyName" class="form-label">Colony / Muhalla :</label>
+                                <select asp-for="ColonyName" class="form-select">
+                                    <option value="">Select Colony / Muhalla</option>
+                                    <option value="">Select City First</option>
+                                </select>
+                                <span asp-validation-for="ColonyName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="NearBies" class="form-label">Select Near Bies :</label>
+                                <select asp-for="NearBies" multiple="multiple" class="form-select">
+                                    <option value="">Select Near By</option>
+                                    <option value="">Select City First</option>
+                                </select>
+                                <span asp-validation-for="NearBies" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="RoadName" class="form-label">RoadName :</label>
+                                <input type="text" asp-for="RoadName" class="form-control" />
+                                <span asp-validation-for="LandMark" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="LandMark" class="form-label">Near Land Mark :</label>
+                                <input type="text" asp-for="LandMark" class="form-control" />
+                                <span asp-validation-for="LandMark" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="Zone" class="form-label">Zone :</label>
+                                <input type="text" asp-for="Zone" class="form-control" />
+                                <span asp-validation-for="Zone" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <h5 class="my-2 fw-bold text-center">-- Conditions --</h5>
+                        <hr />
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label asp-for="ReligionName" class="form-label">Religion :</label>
+                                <select asp-for="ReligionName" asp-items="ViewBag.LReligion" class="form-select">
+                                    <option value="">Select Religion</option>
+                                </select>
+                                <span asp-validation-for="ReligionName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="mb-3">
+                                <label asp-for="TimeIn" class="form-label">Time Table (In):</label>
+                                <input type="time" asp-for="TimeIn" class="form-control" />
+                                <span asp-validation-for="TimeIn" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="mb-3">
+                                <label asp-for="TimeOut" class="form-label">Time Table (Out):</label>
+                                <input type="time" asp-for="TimeOut" class="form-control" />
+                                <span asp-validation-for="TimeOut" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <h5 class="my-2 fw-bold text-center">-- Others --</h5>
+                        <hr />
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="FurnishedName" class="form-label">Furnished :</label>
+                                <select asp-for="FurnishedName" asp-items="ViewBag.LFurnished" class="form-select">
+                                    <option value="">Select Furnished</option>
+                                </select>
+                                <span asp-validation-for="FurnishedName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="WaterName" class="form-label">Water :</label>
+                                <select asp-for="WaterName" asp-items="ViewBag.LWater" class="form-select">
+                                    <option value="">Select Water Suppply</option>
+                                </select>
+                                <span asp-validation-for="WaterName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="LpgName" class="form-label">LPG :</label>
+                                <select asp-for="LpgName" asp-items="ViewBag.LLpg" class="form-select">
+                                    <option value="">Select LPG</option>
+                                </select>
+                                <span asp-validation-for="LpgName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="ElectricityName" class="form-label">Electricity :</label>
+                                <select asp-for="ElectricityName" asp-items="ViewBag.LElectricity" class="form-select">
+                                    <option value="">Select Electricity</option>
+                                </select>
+                                <span asp-validation-for="ElectricityName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="StairName" class="form-label">Stair :</label>
+                                <select asp-for="StairName" asp-items="ViewBag.LStair" class="form-select">
+                                    <option value="">Select Stair</option>
+                                </select>
+                                <span asp-validation-for="StairName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="RoofName" class="form-label">Roof :</label>
+                                <select asp-for="RoofName" asp-items="ViewBag.LRoof" class="form-select">
+                                    <option value="">Select Roof</option>
+                                </select>
+                                <span asp-validation-for="RoofName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="CookingName" class="form-label">Cooking :</label>
+                                <select asp-for="CookingName" asp-items="ViewBag.LCooking" class="form-select">
+                                    <option value="">Select Cooking</option>
+                                </select>
+                                <span asp-validation-for="CookingName" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="my-2">Utility Details :-</h5>
+                    <div class="row">
+
+
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="MonthlyRent" class="form-label">Monthly Rent :</label>
+                                <input type="number" asp-for="MonthlyRent" class="form-control" />
+                                <span asp-validation-for="MonthlyRent" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="SecurityDeposit" class="form-label">Security Deposit :</label>
+                                <input type="number" asp-for="SecurityDeposit" class="form-control" />
+                                <span asp-validation-for="SecurityDeposit" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="AgreementFees" class="form-label">Agreement Fees :</label>
+                                <input type="number" asp-for="AgreementFees" class="form-control" />
+                                <span asp-validation-for="AgreementFees" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="AgreementTime" class="form-label">Agreement Time (In Months) :</label>
+                                <input type="number" asp-for="AgreementTime" class="form-control" />
+                                <span asp-validation-for="AgreementTime" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="InVacantTime" class="form-label">In Case Before Vacant(In Month):</label>
+                                <input type="number" asp-for="InVacantTime" class="form-control" />
+                                <span asp-validation-for="InVacantTime" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <h5 class="my-2 fw-bold text-center">-- Distances --</h5>
+                        <hr />
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="RailwayName" class="form-label">Railway Station Name :</label>
+                                <select asp-for="RailwayName" class="form-select">
+                                    <option value="">Select Railway station</option>
+                                </select>
+                                <span asp-validation-for="RailwayName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="RailwayDis" class="form-label">Railway Station Distance :</label>
+                                <input type="text" asp-for="RailwayDis" class="form-control" />
+                                <span asp-validation-for="RailwayDis" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="BusName" class="form-label">Bus Stand Name :</label>
+                                <select asp-for="BusName" class="form-select">
+                                    <option value="">Select Bus station</option>
+                                </select>
+                                <span asp-validation-for="BusName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="BusDis" class="form-label">Bus Stand Distance :</label>
+                                <input type="text" asp-for="BusDis" class="form-control" />
+                                <span asp-validation-for="BusDis" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="SchoolGovName" class="form-label">School Gov Name :</label>
+                                <select asp-for="SchoolGovName" class="form-select">
+                                    <option value="">Select SchoolGov</option>
+                                </select>
+                                <span asp-validation-for="SchoolGovName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="SchoolGovDis" class="form-label">SchoolGov Distance :</label>
+                                <input type="text" asp-for="SchoolGovDis" class="form-control" />
+                                <span asp-validation-for="SchoolGovDis" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="SchoolPvtName" class="form-label">School Pvt Name :</label>
+                                <select asp-for="SchoolPvtName" class="form-select">
+                                    <option value="">Select SchoolPvt</option>
+                                </select>
+                                <span asp-validation-for="SchoolPvtName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="SchoolPvtDis" class="form-label">SchoolPvt Distance :</label>
+                                <input type="text" asp-for="SchoolPvtDis" class="form-control" />
+                                <span asp-validation-for="SchoolPvtDis" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="HospitalGovName" class="form-label">Hospital Gov Name :</label>
+                                <select asp-for="HospitalGovName" class="form-select">
+                                    <option value="">Select HospitalGov</option>
+                                </select>
+                                <span asp-validation-for="HospitalGovName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="HospitalGovDis" class="form-label">HospitalGov Distance :</label>
+                                <input type="text" asp-for="HospitalGovDis" class="form-control" />
+                                <span asp-validation-for="HospitalGovDis" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="HospitalPvtName" class="form-label">Hospital Pvt Name :</label>
+                                <select asp-for="HospitalPvtName" class="form-select">
+                                    <option value="">Select HospitalPvt</option>
+                                </select>
+                                <span asp-validation-for="HospitalPvtName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="HospitalPvtDis" class="form-label">HospitalPvt Distance :</label>
+                                <input type="text" asp-for="HospitalPvtDis" class="form-control" />
+                                <span asp-validation-for="HospitalPvtDis" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="BankGovName" class="form-label">Bank Gov Name :</label>
+                                <select asp-for="BankGovName" class="form-select">
+                                    <option value="">Select BankGov</option>
+                                </select>
+                                <span asp-validation-for="BankGovName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="BankGovDis" class="form-label">BankGov Distance :</label>
+                                <input type="text" asp-for="BankGovDis" class="form-control" />
+                                <span asp-validation-for="BankGovDis" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="BankPvtName" class="form-label">Bank Pvt Name :</label>
+                                <select asp-for="BankPvtName" class="form-select">
+                                    <option value="">Select BankPvt</option>
+                                </select>
+                                <span asp-validation-for="BankPvtName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="BankPvtDis" class="form-label">BankPvt Distance :</label>
+                                <input type="text" asp-for="BankPvtDis" class="form-control" />
+                                <span asp-validation-for="BankPvtDis" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="MarketName" class="form-label">Market Name :</label>
+                                <select asp-for="MarketName" class="form-select">
+                                    <option value="">Select Market station</option>
+                                </select>
+                                <span asp-validation-for="MarketName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="MarketDis" class="form-label">Market Distance :</label>
+                                <input type="text" asp-for="MarketDis" class="form-control" />
+                                <span asp-validation-for="MarketDis" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="DmOfficeName" class="form-label">DmOffice Name :</label>
+                                <select asp-for="DmOfficeName" class="form-select">
+                                    <option value="">Select DmOffice station</option>
+                                </select>
+                                <span asp-validation-for="DmOfficeName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="DmOfficeDis" class="form-label">DmOffice Distance :</label>
+                                <input type="text" asp-for="DmOfficeDis" class="form-control" />
+                                <span asp-validation-for="DmOfficeDis" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="PublicTptName" class="form-label">PublicTpt Name :</label>
+                                <select asp-for="PublicTptName" class="form-select">
+                                    <option value="">Select PublicTpt station</option>
+                                </select>
+                                <span asp-validation-for="PublicTptName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="PublicTptDis" class="form-label">PublicTpt Distance :</label>
+                                <input type="text" asp-for="PublicTptDis" class="form-control" />
+                                <span asp-validation-for="PublicTptDis" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="Description" class="form-label">Description :</label>
+                                <textarea asp-for="Description" class="form-control"></textarea>
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <h5 class="my-2">Property Images :-</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Image 1(Featured Image) :</label>
+                                <input type="file" id="imageInput1" name="imageInput1" class="form-control-file" data-val="true" data-val-required="Upload Image" />
+                                <span class="text-danger field-validation-valid" data-valmsg-for="imageInput1" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Image 2 :</label>
+                                <input type="file" id="imageInput2" name="imageInput2" class="form-control-file" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Image 3 :</label>
+                                <input type="file" id="imageInput3" name="imageInput3" class="form-control-file" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Image 4 :</label>
+                                <input type="file" id="imageInput4" name="imageInput4" class="form-control-file" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Image 5 :</label>
+                                <input type="file" id="imageInput5" name="imageInput5" class="form-control-file" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Image 6 :</label>
+                                <input type="file" id="imageInput6" name="imageInput6" class="form-control-file" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-outline-primary" onclick="MyDemo(event)">Submit</button>
+                        <button type="reset" class="btn btn-danger ms-3">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $('#NearBies').select2();
+            $('#CityName').on('change', function () {
+                let cityname = $(this).val();
+                GetColony(cityname);
+                GetNearBy(cityname);
+                GetDistanceMaster(cityname, 'RailwayName', '/ProMain/GetRailway');
+                GetDistanceMaster(cityname, 'BusName', '/ProMain/GetBus');
+                GetDistanceMaster(cityname, 'SchoolGovName', '/ProMain/GetSchoolGov');
+                GetDistanceMaster(cityname, 'SchoolPvtName', '/ProMain/GetSchoolPvt');
+                GetDistanceMaster(cityname, 'MarketName', '/ProMain/GetMarket');
+                GetDistanceMaster(cityname, 'PublicTptName', '/ProMain/GetPublicTpt');
+                GetDistanceMaster(cityname, 'DmOfficeName', '/ProMain/GetDmOffice');
+                GetDistanceMaster(cityname, 'BankPvtName', '/ProMain/GetBankPvt');
+                GetDistanceMaster(cityname, 'BankGovName', '/ProMain/GetBankGov');
+                GetDistanceMaster(cityname, 'HospitalGovName', '/ProMain/GetHospitalGov');
+                GetDistanceMaster(cityname, 'HospitalPvtName', '/ProMain/GetHospitalPvt');
+            });
+        });
+
+        function MyDemo(e) {
+            //alert('Some Things Are Under Constrution');
+        }
+        function GetPropertySub() {
+            //debugger;
+            let cval = $("#PropertyTypeId").val();
+            $.ajax({
+                url: "/ProMain/GetPropertySub",
+                dataType: 'json',
+                data: { main: cval },
+                success: function (res) {
+                    let $typeSub = $("#PropertyVariantName");
+                    $typeSub.empty();
+                    $typeSub.append($("<option>").val("").text("Select Property Variant"));
+                    if (res.length > 0) {
+                        $.each(res, function (index, item) {
+                            console.log(item);
+                            $typeSub.append($("<option>").val(item.propertyVariantName).text(item.propertyVariantName));
+                        });
+                    } else {
+                        $typeSub.append($("<option>").val("").text("No Variants available"));
+                    }
+                },
+                error: function () {
+                    alert("An error occurred while retrieving property subtypes.");
+                }
+            });
+        }
+
+        function GetStates() {
+            let country = $("#CountryName").val();
+            $.ajax({
+                url: "/ProMain/GetStates",
+                dataType: 'json',
+                data: { country: country },
+                success: function (res) {
+                    let $stateName = $("#StateName");
+                    $stateName.empty(); // Clear existing options
+                    $stateName.append($("<option>").val("").text("Select State"));
+                    if (res.length > 0) {
+                        $.each(res, function (index, item) {
+                            $stateName.append($("<option>").val(item).text(item));
+                        });
+                    } else {
+                        $stateName.append($("<option>").val("").text("No stateNames available"));
+                    }
+
+                    // Clear the city dropdown if stateNames are updated
+                    $("#District").empty().append($("<option>").val("").text("Select State First"));
+                },
+                error: function () {
+                    alert("An error occurred while retrieving stateNames.");
+                }
+            });
+        }
+
+        function GetCities() {
+            let stateName = $("#StateName").val();
+            $.ajax({
+                url: "/ProMain/GetCities",
+                dataType: 'json',
+                data: { stateName: stateName },
+                success: function (res) {
+                    let $city = $("#CityName");
+                    $city.empty(); // Clear existing options
+                    $city.append($("<option>").val("").text("Select City"));
+
+                    if (res.length > 0) {
+                        $.each(res, function (index, item) {
+                            $city.append($("<option>").val(item).text(item));
+                        });
+                    } else {
+                        $city.append($("<option>").val("").text("No cities available"));
+                    }
+                },
+                error: function () {
+                    alert("An error occurred while retrieving cities.");
+                }
+            });
+        }
+
+        function GetDistanceMaster(cityname, eleId, url) {
+            $.ajax({
+                url: url,
+                dataType: 'json',
+                data: { cityname: cityname },
+                success: function (res) {
+                    let $ele = $("#" + eleId);
+                    $ele.empty(); // Clear existing options
+                    $ele.append($("<option>").val("").text("Select " + eleId));
+
+                    if (res.length > 0) {
+                        $.each(res, function (index, item) {
+                            $ele.append($("<option>").val(item).text(item));
+                        });
+                    } else {
+                        $ele.append($("<option>").val("").text("No " + eleId + " available"));
+                    }
+                },
+                error: function () {
+                    alert("An error occurred while retrieving cities.");
+                }
+            });
+        }
+
+
+        function GetColony(cityname) {
+            $.ajax({
+                url: "/ProMain/GetColony",
+                dataType: 'json',
+                data: { cityname: cityname },
+                success: function (res) {
+                    let $ele = $("#ColonyName");
+                    $ele.empty(); // Clear existing options
+                    $ele.append($("<option>").val("").text("Select Colony / Muhalla"));
+
+                    if (res.length > 0) {
+                        $.each(res, function (index, item) {
+                            $ele.append($("<option>").val(item).text(item));
+                        });
+                    } else {
+                        $ele.append($("<option>").val("").text("No Colony available"));
+                    }
+                },
+                error: function () {
+                    alert("An error occurred while retrieving cities.");
+                }
+            });
+        }
+
+        function GetNearBy(cityname) {
+            $.ajax({
+                url: "/ProMain/GetNearBy",
+                dataType: 'json',
+                data: { cityname: cityname },
+                success: function (res) {
+                    let $ele = $("#NearBies");
+                    $ele.empty(); // Clear existing options
+                    $ele.append($("<option>").val("").text("Select Nearby"));
+
+                    if (res.length > 0) {
+                        $.each(res, function (index, item) {
+                            $ele.append($("<option>").val(item.id).text(item.nearByName));
+                        });
+                    } else {
+                        $ele.append($("<option>").val("").text("No NearBy available"));
+                    }
+                },
+                error: function () {
+                    alert("An error occurred while retrieving cities.");
+                }
+            });
+        }
+
+
+
+    </script>
+}
+

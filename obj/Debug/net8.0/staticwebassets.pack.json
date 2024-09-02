@@ -1,0 +1,537 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\css\\bootstrap-icons\\bootstrap-icons.css",
+      "PackagePath": "staticwebassets\\AdminLayouts\\css\\bootstrap-icons\\bootstrap-icons.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\css\\bootstrap-icons\\bootstrap-icons.json",
+      "PackagePath": "staticwebassets\\AdminLayouts\\css\\bootstrap-icons\\bootstrap-icons.json"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\css\\bootstrap-icons\\fonts\\bootstrap-icons.woff",
+      "PackagePath": "staticwebassets\\AdminLayouts\\css\\bootstrap-icons\\fonts\\bootstrap-icons.woff"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\css\\bootstrap-icons\\fonts\\bootstrap-icons.woff2",
+      "PackagePath": "staticwebassets\\AdminLayouts\\css\\bootstrap-icons\\fonts\\bootstrap-icons.woff2"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\css\\bootstrap-icons\\index.html",
+      "PackagePath": "staticwebassets\\AdminLayouts\\css\\bootstrap-icons\\index.html"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\AdminLayouts\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\AdminLayouts\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\css\\boxicons\\css\\animations.css",
+      "PackagePath": "staticwebassets\\AdminLayouts\\css\\boxicons\\css\\animations.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\css\\boxicons\\css\\boxicons.css",
+      "PackagePath": "staticwebassets\\AdminLayouts\\css\\boxicons\\css\\boxicons.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\css\\boxicons\\css\\boxicons.min.css",
+      "PackagePath": "staticwebassets\\AdminLayouts\\css\\boxicons\\css\\boxicons.min.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\css\\boxicons\\css\\transformations.css",
+      "PackagePath": "staticwebassets\\AdminLayouts\\css\\boxicons\\css\\transformations.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\css\\boxicons\\fonts\\boxicons.eot",
+      "PackagePath": "staticwebassets\\AdminLayouts\\css\\boxicons\\fonts\\boxicons.eot"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\css\\boxicons\\fonts\\boxicons.svg",
+      "PackagePath": "staticwebassets\\AdminLayouts\\css\\boxicons\\fonts\\boxicons.svg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\css\\boxicons\\fonts\\boxicons.ttf",
+      "PackagePath": "staticwebassets\\AdminLayouts\\css\\boxicons\\fonts\\boxicons.ttf"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\css\\boxicons\\fonts\\boxicons.woff",
+      "PackagePath": "staticwebassets\\AdminLayouts\\css\\boxicons\\fonts\\boxicons.woff"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\css\\boxicons\\fonts\\boxicons.woff2",
+      "PackagePath": "staticwebassets\\AdminLayouts\\css\\boxicons\\fonts\\boxicons.woff2"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\css\\style.css",
+      "PackagePath": "staticwebassets\\AdminLayouts\\css\\style.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\datatables\\buttons.dataTables.min.css",
+      "PackagePath": "staticwebassets\\AdminLayouts\\datatables\\buttons.dataTables.min.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\datatables\\buttons.print.min.js",
+      "PackagePath": "staticwebassets\\AdminLayouts\\datatables\\buttons.print.min.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\datatables\\dataTables.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\AdminLayouts\\datatables\\dataTables.bootstrap5.min.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\datatables\\dataTables.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\AdminLayouts\\datatables\\dataTables.bootstrap5.min.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\datatables\\dataTables.buttons.min.js",
+      "PackagePath": "staticwebassets\\AdminLayouts\\datatables\\dataTables.buttons.min.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\datatables\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\AdminLayouts\\datatables\\jquery.dataTables.min.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\img\\favicon.png",
+      "PackagePath": "staticwebassets\\AdminLayouts\\img\\favicon.png"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\img\\logo.png",
+      "PackagePath": "staticwebassets\\AdminLayouts\\img\\logo.png"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\img\\not-found.svg",
+      "PackagePath": "staticwebassets\\AdminLayouts\\img\\not-found.svg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\img\\profile-img.jpg",
+      "PackagePath": "staticwebassets\\AdminLayouts\\img\\profile-img.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\jquery-validate\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\AdminLayouts\\jquery-validate\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\AdminLayouts\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\AdminLayouts\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\AdminLayouts\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\js\\custom.js",
+      "PackagePath": "staticwebassets\\AdminLayouts\\js\\custom.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\js\\jquery-3.6.3.js",
+      "PackagePath": "staticwebassets\\AdminLayouts\\js\\jquery-3.6.3.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\js\\jquery-3.6.3.min.js",
+      "PackagePath": "staticwebassets\\AdminLayouts\\js\\jquery-3.6.3.min.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\js\\jquery-3.6.3.min.map",
+      "PackagePath": "staticwebassets\\AdminLayouts\\js\\jquery-3.6.3.min.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\AdminLayouts\\js\\main.js",
+      "PackagePath": "staticwebassets\\AdminLayouts\\js\\main.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\Content\\adminsite.css",
+      "PackagePath": "staticwebassets\\Content\\adminsite.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\Content\\userlogo.png",
+      "PackagePath": "staticwebassets\\Content\\userlogo.png"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\PropertyImages\\638598465456228575.jpg",
+      "PackagePath": "staticwebassets\\PropertyImages\\638598465456228575.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\PropertyImages\\638598467139834604.jpg",
+      "PackagePath": "staticwebassets\\PropertyImages\\638598467139834604.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\PropertyImages\\638598468017533411.jpg",
+      "PackagePath": "staticwebassets\\PropertyImages\\638598468017533411.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\PropertyImages\\638598512883912932.jpg",
+      "PackagePath": "staticwebassets\\PropertyImages\\638598512883912932.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\PropertyImages\\638598527062983204.jpg",
+      "PackagePath": "staticwebassets\\PropertyImages\\638598527062983204.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\PropertyImages\\638599331646496523.jpg",
+      "PackagePath": "staticwebassets\\PropertyImages\\638599331646496523.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\PropertyImages\\638599336243608038.jpg",
+      "PackagePath": "staticwebassets\\PropertyImages\\638599336243608038.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\aboutbg.jpg",
+      "PackagePath": "staticwebassets\\img\\aboutbg.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\avatar1.jpg",
+      "PackagePath": "staticwebassets\\img\\avatar1.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\avatar2.jpg",
+      "PackagePath": "staticwebassets\\img\\avatar2.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\avatar3.jpg",
+      "PackagePath": "staticwebassets\\img\\avatar3.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\avatar4.jpg",
+      "PackagePath": "staticwebassets\\img\\avatar4.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\avatar5.jpg",
+      "PackagePath": "staticwebassets\\img\\avatar5.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\avatar6.jpg",
+      "PackagePath": "staticwebassets\\img\\avatar6.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\download.jfif",
+      "PackagePath": "staticwebassets\\img\\download.jfif"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\mylogo.png",
+      "PackagePath": "staticwebassets\\img\\mylogo.png"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\pexels-photo-106399.jpeg",
+      "PackagePath": "staticwebassets\\img\\pexels-photo-106399.jpeg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\pexels-photo-1396122.jpeg",
+      "PackagePath": "staticwebassets\\img\\pexels-photo-1396122.jpeg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\pexels-photo-164522.jpeg",
+      "PackagePath": "staticwebassets\\img\\pexels-photo-164522.jpeg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\pexels-photo-210617.jpeg",
+      "PackagePath": "staticwebassets\\img\\pexels-photo-210617.jpeg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\photo-1582407947304-fd86f028f716.avif",
+      "PackagePath": "staticwebassets\\img\\photo-1582407947304-fd86f028f716.avif"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\property-1.jpg",
+      "PackagePath": "staticwebassets\\img\\property-1.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\property-2.jpg",
+      "PackagePath": "staticwebassets\\img\\property-2.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\property-3.jpg",
+      "PackagePath": "staticwebassets\\img\\property-3.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\property-4.jpg",
+      "PackagePath": "staticwebassets\\img\\property-4.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\property-5.jpg",
+      "PackagePath": "staticwebassets\\img\\property-5.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\property-6.jpg",
+      "PackagePath": "staticwebassets\\img\\property-6.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\property-7.jpg",
+      "PackagePath": "staticwebassets\\img\\property-7.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\property-8.jpg",
+      "PackagePath": "staticwebassets\\img\\property-8.jpg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\shopping.jpeg",
+      "PackagePath": "staticwebassets\\img\\shopping.jpeg"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\img\\shopping_bg.png",
+      "PackagePath": "staticwebassets\\img\\shopping_bg.png"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\MdAsif\\Mroom-Game\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MRoom.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MRoom.props",
+      "PackagePath": "build\\MRoom.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MRoom.props",
+      "PackagePath": "buildMultiTargeting\\MRoom.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MRoom.props",
+      "PackagePath": "buildTransitive\\MRoom.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
