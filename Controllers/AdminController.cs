@@ -78,12 +78,12 @@ namespace MRoom.Controllers
             {
                 return BadRequest();
             }
-            Slider? country = db.Sliders.Find(id);
-            if (country == null)
+            Slider? slider = db.Sliders.Find(id);
+            if (slider == null)
             {
                 return Content("Nothing Found");
             }
-            return View(country);
+            return View(slider);
         }
 
         [HttpPost]
@@ -125,7 +125,85 @@ namespace MRoom.Controllers
 
         public IActionResult AcTestimonials()
         {
+            List<Testimonial> testimonials = db.Testimonials.AsNoTracking().ToList();
+            return View(testimonials);
+        }
+
+        public IActionResult AcTestimonialsCreate()
+        {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult AcTestimonialsCreate(Testimonial testimonial, IFormFile formFile)
+        {
+            if (ModelState.IsValid)
+            {
+                if (formFile.Length > 0)
+                {
+                    testimonial.ImgPath = SaveFile(formFile, "Testimonials");
+                }
+                db.Testimonials.Add(testimonial);
+                db.SaveChanges();
+                TempData["datachange"] = "Testimonial is Successfully Saved.";
+                return RedirectToAction("AcTestimonialsList");
+            }
+            else
+            {
+                TempData["datachange"] = "Testimonial is Not Saved.";
+            }
+            return View(testimonial);
+        }
+
+        public IActionResult AcTestimonialsEdit(int? id)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+            Testimonial? testimonial = db.Testimonials.Find(id);
+            if (testimonial == null)
+            {
+                return Content("Nothing Found");
+            }
+            return View(testimonial);
+        }
+
+        [HttpPost]
+        public IActionResult AcTestimonialsEdit(Testimonial testimonial, IFormFile? formFile)
+        {
+            if (ModelState.IsValid)
+            {
+                if (formFile != null && formFile.Length > 0)
+                {
+                    testimonial.ImgPath = SaveFile(formFile, "Testimonials");
+                }
+                db.Entry(testimonial).State = EntityState.Modified;
+                db.SaveChanges();
+                TempData["datachange"] = "Testimonial is Successfully Updated.";
+                return RedirectToAction("AcTestimonialsList");
+            }
+            else
+            {
+                TempData["datachange"] = "Testimonial is Not Updated.";
+            }
+            return View(testimonial);
+        }
+
+        public IActionResult AcTestimonialsDelete(int id)
+        {
+            Testimonial? testimonial = db.Testimonials.Find(id);
+            if (testimonial != null)
+            {
+                db.Testimonials.Remove(testimonial);
+                db.SaveChanges();
+                TempData["datachange"] = "Testimonial Delete.";
+            }
+            else
+            {
+                TempData["datachange"] = "Data Not Delete.";
+            }
+            return RedirectToAction("AcTestimonialsList");
         }
 
         public IActionResult Settings()

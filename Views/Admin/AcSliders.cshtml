@@ -1,0 +1,48 @@
+@model IEnumerable<Slider>
+@{
+    ViewBag.Title = "Sliders";
+    ViewBag.PageTitle = "Sliders";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int i = 1;
+}
+<div class="card">
+    <div class="card-header">
+        <a href="/Admin/AcSlidersCreate" class="btn btn-success"><i class="bi bi-plus"></i> Add</a>
+    </div>
+    <div class="card-body table-responsive">
+        <table id="sliderdt" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr class="text-nowrap">
+                    <th>S. No</th>
+                    <th>Slider Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody class="text-nowrap">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@(i++)</td>
+                        <td>
+                            <img src="@item.FilePath" width="100" height="100" />
+                        </td>
+                        <td>
+                            <a href="/Admin/AcSlidersEdit/@item.Id" class="text-purple me-2"><i class="bi bi-pencil"></i></a>
+                            <a href="/Admin/AcSlidersDelete/@item.Id" onclick="return confirm('Are you sure want to delete?')" class="text-danger"><i class="bi bi-trash"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+
+        $('#sliderdt').DataTable({
+            "scrollX": true
+        });
+
+    </script>
+}

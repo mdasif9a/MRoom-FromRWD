@@ -1,0 +1,45 @@
+@model Testimonial
+@{
+    ViewBag.Title = "Testimonial Create";
+    ViewBag.PageTitle = "Testimonial Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <form action="/Admin/AcTestimonialsCreate" method="post" class="row g-0" enctype="multipart/form-data">
+
+                    <div class="col-12">
+                        <input type="hidden" asp-for="Id" />
+                        <div class="mb-3">
+                            <label asp-for="Name" class="from-label mb-2">Enter Name</label>
+                            <input type="text" asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                         <div class="mb-3">
+                            <label asp-for="Title" class="from-label mb-2">Enter Title</label>
+                            <input type="text" asp-for="Title" class="form-control" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Description" class="from-label mb-2">Enter Description</label>
+                            <input type="text" asp-for="Description" class="form-control" />
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Upload Image :</label>
+                            <input type="file" id="formFile" name="formFile" class="form-control-file" data-val="true" data-val-required="Upload Image" />
+                            <span class="text-danger field-validation-valid" data-valmsg-for="formFile" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-outline-primary">Submit</button>
+                        <button type="reset" class="btn btn-danger ms-3">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

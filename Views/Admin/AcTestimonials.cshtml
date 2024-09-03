@@ -1,0 +1,54 @@
+@model IEnumerable<Testimonial>
+@{
+    ViewBag.Title = "Testimonials";
+    ViewBag.PageTitle = "Testimonials";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int i = 1;
+}
+<div class="card">
+    <div class="card-header">
+        <a href="/Admin/AcTestimonialsCreate" class="btn btn-success"><i class="bi bi-plus"></i> Add</a>
+    </div>
+    <div class="card-body table-responsive">
+        <table id="testimonialdt" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr class="text-nowrap">
+                    <th>S. No</th>
+                    <th>Name</th>
+                    <th>Title</th>
+                    <th width="200">Description</th>
+                    <th>Profile Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody class="text-nowrap">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@(i++)</td>
+                        <td>@item.Name</td>
+                        <td>@item.Title</td>
+                        <td>@item.Description</td>
+                        <td>
+                            <img src="@item.ImgPath" width="100" height="100" />
+                        </td>
+                        <td>
+                            <a href="/Admin/AcTestimonialsEdit/@item.Id" class="text-purple me-2"><i class="bi bi-pencil"></i></a>
+                            <a href="/Admin/AcTestimonialsDelete/@item.Id" onclick="return confirm('Are you sure want to delete?')" class="text-danger"><i class="bi bi-trash"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+
+        $('#testimonialdt').DataTable({
+            "scrollX": true
+        });
+
+    </script>
+}

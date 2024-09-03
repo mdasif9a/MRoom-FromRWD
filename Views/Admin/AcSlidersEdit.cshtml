@@ -1,0 +1,31 @@
+@model Slider
+@{
+    ViewBag.Title = "Slider Edit";
+    ViewBag.PageTitle = "Slider Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <form action="/Admin/AcSlidersEdit" method="post" class="row g-0" enctype="multipart/form-data">
+
+                    <div class="col-12">
+                        <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="FilePath" />
+                        <div class="mb-3">
+                            <label class="form-label">Upload Image :</label>
+                            <input type="file" id="formFile" name="formFile" class="form-control-file" data-val="true" data-val-required="Upload Image" />
+                            <span class="text-danger field-validation-valid" data-valmsg-for="formFile" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-outline-primary">Submit</button>
+                        <button type="reset" class="btn btn-danger ms-3">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

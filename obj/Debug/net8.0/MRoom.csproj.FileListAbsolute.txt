@@ -1106,3 +1106,4 @@ D:\MdAsif\Mroom-Game\obj\Debug\net8.0\refint\MRoom.dll
 D:\MdAsif\Mroom-Game\obj\Debug\net8.0\MRoom.pdb
 D:\MdAsif\Mroom-Game\obj\Debug\net8.0\MRoom.genruntimeconfig.cache
 D:\MdAsif\Mroom-Game\obj\Debug\net8.0\ref\MRoom.dll
+D:\MdAsif\Mroom-Game\obj\Debug\net8.0\MRoom.sourcelink.json
