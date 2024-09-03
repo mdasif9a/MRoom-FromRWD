@@ -114,7 +114,8 @@ namespace MRoom.Controllers
 
         public IActionResult Testimonials()
         {
-            return View();
+            List<Testimonial> testimonials = db.Testimonials.AsNoTracking().ToList();
+            return View(testimonials);
         }
 
         public IActionResult Tenats()

@@ -12,7 +12,7 @@
                 <form action="/Admin/AcTestimonialsCreate" method="post" class="row g-0" enctype="multipart/form-data">
 
                     <div class="col-12">
-                        <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="Id" value="0" />
                         <div class="mb-3">
                             <label asp-for="Name" class="from-label mb-2">Enter Name</label>
                             <input type="text" asp-for="Name" class="form-control" />
@@ -30,7 +30,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Upload Image :</label>
-                            <input type="file" id="formFile" name="formFile" class="form-control-file" data-val="true" data-val-required="Upload Image" />
+                            <input type="file" id="formFile" name="formFile" class="form-control" data-val="true" data-val-required="Upload Image" />
                             <span class="text-danger field-validation-valid" data-valmsg-for="formFile" data-valmsg-replace="true"></span>
                         </div>
                     </div>

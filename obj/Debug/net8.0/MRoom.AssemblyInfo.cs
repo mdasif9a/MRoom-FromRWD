@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MRoom")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93ecf23211e3cdadeccab1931335d544536ebada")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8df7e0f5a65014afcbeecbcec4de8cec99b16a9b")]
 [assembly: System.Reflection.AssemblyProductAttribute("MRoom")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MRoom")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

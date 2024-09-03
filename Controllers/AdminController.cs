@@ -63,7 +63,7 @@ namespace MRoom.Controllers
                 db.Sliders.Add(slider);
                 db.SaveChanges();
                 TempData["datachange"] = "Slider is Successfully Saved.";
-                return RedirectToAction("AcSlidersList");
+                return RedirectToAction("AcSliders");
             }
             else
             {
@@ -98,7 +98,7 @@ namespace MRoom.Controllers
                 db.Entry(slider).State = EntityState.Modified;
                 db.SaveChanges();
                 TempData["datachange"] = "Slider is Successfully Updated.";
-                return RedirectToAction("AcSlidersList");
+                return RedirectToAction("AcSliders");
             }
             else
             {
@@ -120,7 +120,7 @@ namespace MRoom.Controllers
             {
                 TempData["datachange"] = "Data Not Delete.";
             }
-            return RedirectToAction("AcSlidersList");
+            return RedirectToAction("AcSliders");
         }
 
         public IActionResult AcTestimonials()
@@ -146,7 +146,7 @@ namespace MRoom.Controllers
                 db.Testimonials.Add(testimonial);
                 db.SaveChanges();
                 TempData["datachange"] = "Testimonial is Successfully Saved.";
-                return RedirectToAction("AcTestimonialsList");
+                return RedirectToAction("AcTestimonials");
             }
             else
             {
@@ -181,7 +181,7 @@ namespace MRoom.Controllers
                 db.Entry(testimonial).State = EntityState.Modified;
                 db.SaveChanges();
                 TempData["datachange"] = "Testimonial is Successfully Updated.";
-                return RedirectToAction("AcTestimonialsList");
+                return RedirectToAction("AcTestimonials");
             }
             else
             {
@@ -203,7 +203,7 @@ namespace MRoom.Controllers
             {
                 TempData["datachange"] = "Data Not Delete.";
             }
-            return RedirectToAction("AcTestimonialsList");
+            return RedirectToAction("AcTestimonials");
         }
 
         public IActionResult Settings()
